@@ -3,7 +3,7 @@
 Plugin Name: WP Universal Magenet
 Plugin URI: http://google.com/
 Description: WP Plugin based in Magenet Universal Plugin to replace the Monetize by magenet WP Plugin.
-Version: 1.0
+Version: 1.1
 Author: Sniuk, etruel
 Author URI: http://www.netmdp.com/
 License: GPL2
@@ -24,7 +24,7 @@ class wp_universal_magenet {
 	private function setup_constants() {
         define('WP_UNIVERSAL_MAGENET_DIR', plugin_dir_path( __FILE__ ));
         define('WP_UNIVERSAL_MAGENET_URL', plugin_dir_url( __FILE__ ));
-		define('WP_UNIVERSAL_MAGENET_VERSION', '1.0');
+		define('WP_UNIVERSAL_MAGENET_VERSION', '1.1');
 		
     }
 	private function includes() {

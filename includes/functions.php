@@ -5,17 +5,17 @@ function orderLinksByUrl($arr = array()) {
 		$arr = array();
 	}
 	foreach ($arr as $k => $ar) {
-		if (empty($n_arr[$ar['page_url']])) {
-			$n_arr[$ar['page_url']] = array();
+		if (empty($n_arr[esc_url($ar['page_url'])])) {
+			$n_arr[esc_url($ar['page_url'])] = array();
 		}
-		$n_arr[$ar['page_url']][] = $ar['issue_html'];
+		$n_arr[esc_url($ar['page_url'])][] = $ar['issue_html'];
 	}
 	return $n_arr;
 }
 function magenet_in_array($v, $array = array()) {
 	$return = false;
 	foreach ($array as $k => $value) {
-		if (substr($value, 0, 30) == $v) {
+		if (base64_encode(substr($value, 0, 30)) == $v) {
 			$return = $k;
 			break;
 		}

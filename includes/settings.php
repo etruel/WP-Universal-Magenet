@@ -84,7 +84,7 @@ class wp_universal_magenet_settings {
 												echo '<div id="uc_id_'.$i.'" class="sortitem '.((($i % 2) == 0) ? 'bw' :  'lightblue').'"> 
 														<div class="sorthandle"> </div> 
 														<div class="uc_column" id="">
-															<input type="hidden" name="wp_universal_magenet_options_group[order_link]['.base64_encode($url).'][]" value="'.substr($l, 0, 30).'"/><label>'.$l.'</label>
+															<input type="hidden" name="wp_universal_magenet_options_group[order_link]['.base64_encode($url).'][]" value="'.base64_encode(substr($l, 0, 30)).'"/><label>'.$l.'</label>
 														</div>
 													</div>';
 												
@@ -92,6 +92,10 @@ class wp_universal_magenet_settings {
 								
 											echo '</div>';
 									}
+									if (!empty($ordered_link)) {
+										submit_button();
+									}
+									
 									
 								}
 											
